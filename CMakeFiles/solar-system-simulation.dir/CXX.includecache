@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/main.cpp
+OpenGL/gl.h
+-
+GLUT/glut.h
+-
+

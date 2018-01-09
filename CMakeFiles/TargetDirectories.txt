@@ -1,0 +1,3 @@
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/rebuild_cache.dir
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/edit_cache.dir
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir
