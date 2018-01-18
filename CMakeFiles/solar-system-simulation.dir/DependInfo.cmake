@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/main.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/main.cpp.o"
+  "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o"
+  "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/object.cpp.o"
+  "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

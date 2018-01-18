@@ -19,6 +19,9 @@ include_directories(
 add_executable(
     solar-system-simulation
     src/main.cpp
+    src/modules.cpp
+    src/object.cpp
+    src/sphere.cpp
 )
 
 target_link_libraries(
