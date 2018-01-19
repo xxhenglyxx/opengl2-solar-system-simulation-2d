@@ -5,7 +5,6 @@ CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/modules.h
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/object.h
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/sphere.h
-CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/ui.h
 
 CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o: src/modules.cpp
 CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o: include/modules.h

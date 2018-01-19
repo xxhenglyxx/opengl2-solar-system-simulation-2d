@@ -1,7 +1,7 @@
 
 #include "modules.h"
 
-NonStd::setPerspectiveView (
+void NonStd::setPerspectiveView (
 
     const double foxy,
     const double aspect_ratio,
@@ -11,6 +11,7 @@ NonStd::setPerspectiveView (
 ) {
 
     glMatrixMode ( GL_PROJECTION );
+    glLoadIdentity ();
     gluPerspective ( foxy, aspect_ratio, near_plane, far_plane );
     glMatrixMode ( GL_MODELVIEW );
 

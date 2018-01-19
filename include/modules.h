@@ -1,6 +1,7 @@
 
 #if __APPLE__
 #include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #elif __WINDOW__
 #include <GL/gl.h>
 #endif

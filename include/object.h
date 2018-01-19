@@ -14,7 +14,7 @@ namespace NonStd {
 
     class Object {
 
-        private:
+        protected:
 
             double * coordinate;
             double * rotation;
@@ -42,12 +42,13 @@ namespace NonStd {
             void rotateY ( const double angle_degree );
             void rotateZ ( const double angle_degree );
 
-            double * getCoordinate () const;
-            double * getRotation () const;
+            double * getCoordinate ();
+            double * getRotation ();
             double getAngle () const;
-            double isObjectShown () const;
+            bool isObjectShown () const;
 
             void setTexture ( const char * file_name, const int width, const int height );
+            void setVisible ( const bool visibility );
 
             virtual void draw ();
 

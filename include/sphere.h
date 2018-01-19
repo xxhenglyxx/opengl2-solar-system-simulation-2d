@@ -7,7 +7,7 @@
 
 namespace NonStd {
 
-    class Sphere : protected Object {
+    class Sphere : public Object {
 
         private:
 

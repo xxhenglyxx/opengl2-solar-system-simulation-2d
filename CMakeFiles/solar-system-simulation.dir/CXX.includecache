@@ -7,14 +7,14 @@
 #IncludeRegexTransform: 
 
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/main.cpp
-ui.h
-/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/ui.h
 object.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.h
 modules.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.h
 sphere.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.h
+GLUT/glut.h
+-
 
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp
 modules.h
@@ -31,6 +31,10 @@ sphere.h
 include/modules.h
 OpenGL/gl.h
 -
+OpenGL/glu.h
+-
+GL/gl.h
+-
 
 include/object.h
 OpenGL/gl.h
@@ -44,11 +48,5 @@ include/sphere.h
 object.h
 include/object.h
 math.h
--
-
-include/ui.h
-OpenGL/gl.h
--
-GL/gl.h
 -
 

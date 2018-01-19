@@ -6,7 +6,6 @@ CMakeFiles/solar-system-simulation.dir/src/main.cpp.o
  include/modules.h
  include/object.h
  include/sphere.h
- include/ui.h
 CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o
  /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp
  include/modules.h
