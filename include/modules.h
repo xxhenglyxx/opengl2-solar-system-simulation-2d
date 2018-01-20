@@ -1,9 +1,12 @@
 
+#include <iostream>
+
 #if __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #elif __WINDOW__
 #include <GL/gl.h>
+#include <GL/glu.h>
 #endif
 
 #ifndef MODULES_H
@@ -30,6 +33,13 @@ namespace NonStd {
         const double far_plane
 
     );
+
+    template < typename T >
+    static void log ( const T log_message ) {
+
+        std::cout << log_message << std::endl;
+
+    };
 
 };
 

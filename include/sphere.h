@@ -1,5 +1,6 @@
 
 #include "object.h"
+#include <GLUT/glut.h>
 #include <math.h>
 
 #ifndef SPHERE_H
@@ -11,7 +12,8 @@ namespace NonStd {
 
         private:
 
-            double radius;
+            double radius, spin_speed;
+            bool is_spin;
 
             void render ();
 
@@ -19,9 +21,16 @@ namespace NonStd {
             double calculateY ( const double theta_degree_angle, const double phi_degree_angle );
             double calculateZ ( const double theta_degree_angle );
 
+            void spin ();
+
         public:
 
             Sphere ( const double radius = 10 );
+
+            double getSpinSpeed () const;
+
+            void toggleSpin ();
+            void setSpinSpeed ( const double speed );
 
             void draw ();
 

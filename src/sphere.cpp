@@ -3,7 +3,25 @@
 
 namespace NonStd {
 
-    Sphere::Sphere ( const double radius ) : radius ( radius ) {
+    Sphere::Sphere ( const double radius ) : radius ( radius ), is_spin ( false ), spin_speed ( 5 ) {
+
+    };
+
+    void Sphere::toggleSpin () {
+
+        this -> is_spin = ! this -> is_spin;
+
+    };
+
+    void Sphere::setSpinSpeed ( const double speed ) {
+
+        this -> spin_speed = speed;
+
+    };
+
+    double Sphere::getSpinSpeed () const {
+
+        return this-> spin_speed;
 
     };
 
@@ -13,49 +31,44 @@ namespace NonStd {
         const double degree_to_rad = 3.14 / 180.0;
         double value = .0, value2 = .0;
 
-        glPushMatrix ();
+        if ( this -> texture_file_name != "" ) {
 
-            if ( this -> texture_file_name != "" ) {
+            glEnable ( GL_TEXTURE_2D );
+            glBindTexture( GL_TEXTURE_2D, this -> texture );
 
-                glEnable ( GL_TEXTURE_2D );
-                glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
-                glBindTexture( GL_TEXTURE_2D, this -> texture );
+        }
+
+        glBegin ( GL_POINTS );
+
+            for ( ; angle < 360; ++ angle ) {
+
+                value = angle * degree_to_rad;
+
+                for ( ; angle2 < 180; ++ angle2 ) {
+
+                    value2 = angle2 * degree_to_rad;
+
+                    glVertex3d (
+
+                        this -> calculateX ( value, value2 ),
+                        this -> calculateY ( value, value2 ),
+                        this -> calculateZ ( value )
+
+                    );
+
+                }
+
+                angle2 = 0;
 
             }
 
-            glBegin ( GL_POINTS );
+        glEnd ();
 
-                for ( ; angle < 360; ++ angle ) {
+        if ( this -> texture_file_name != "" ) {
 
-                    value = angle * degree_to_rad;
+            glDisable ( GL_TEXTURE_2D );
 
-                    for ( ; angle2 < 180; ++ angle2 ) {
-
-                        value2 = angle2 * degree_to_rad;
-
-                        glVertex3d (
-
-                            this -> calculateX ( value, value2 ),
-                            this -> calculateY ( value, value2 ),
-                            this -> calculateZ ( value )
-
-                        );
-
-                    }
-
-                    angle2 = 0;
-
-                }
-
-                if ( this -> texture_file_name != "" ) {
-
-                    glDisable ( GL_TEXTURE_2D );
-
-                }
-
-            glEnd ();
-
-        glPopMatrix ();
+        }
 
     };
 

@@ -15,6 +15,8 @@ sphere.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.h
 GLUT/glut.h
 -
+GL/freeglut.h
+-
 
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp
 modules.h
@@ -29,11 +31,15 @@ sphere.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.h
 
 include/modules.h
+iostream
+-
 OpenGL/gl.h
 -
 OpenGL/glu.h
 -
 GL/gl.h
+-
+GL/glu.h
 -
 
 include/object.h
@@ -47,6 +53,8 @@ iostream
 include/sphere.h
 object.h
 include/object.h
+GLUT/glut.h
+-
 math.h
 -
 
