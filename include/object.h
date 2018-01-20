@@ -23,10 +23,12 @@ namespace NonStd {
             bool isShow;
             bool isTextureShow;
             GLuint texture;
+            std::string texture_file_name;
+            int texture_width, texture_height;
 
             std::string label;
             
-            void loadTexture ( const char * file_name, const int & width, const int & height );
+            void loadTexture ();
             void freeTexture ();
 
         public:

@@ -20,8 +20,12 @@ int main ( int args_len, char ** args_context ) {
     glutInitWindowPosition ( 100, 100 );
     glutCreateWindow ( "Solar System Simulation" );
 
+    glEnable ( GL_NORMALIZE );
+    glEnable ( GL_COLOR_MATERIAL );
+
     sun.setVisible ( true );
     sun.translateZ ( -20.0 );
+    sun.setTexture ( "resources/earth.jpg", 300, 300 );
 
     glutDisplayFunc ( render );
 

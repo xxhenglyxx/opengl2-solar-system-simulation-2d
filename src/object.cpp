@@ -8,6 +8,7 @@ namespace NonStd {
     rotation ( new double [ 3 ] { .0, .0, .0 } ),
     color ( new double [ 3 ] { .0, .0, .0 } ),
     isShow ( false ),
+    texture_file_name ( "" ),
     angle_degree ( 0 ) {
 
     };
@@ -48,43 +49,53 @@ namespace NonStd {
         delete [] this -> rotation;
         delete [] this -> color;
 
-        glDeleteTextures ( 1, & this -> texture );
+        if ( this -> texture_file_name != "" ) glDeleteTextures ( 1, & this -> texture );
 
     };
 
-    void Object::loadTexture ( const char * file_name, const int & width, const int & height ) {
+    void Object::loadTexture () {
 
-        unsigned char * data;
+        int & w = this -> texture_width, & h = this -> texture_height;
+        unsigned char * data = new unsigned char [ w * h * 3 ];
         FILE * file;
 
-        file = fopen ( file_name, "rb" );
+        try {
 
-        if ( !file ) return;
+            file = fopen ( this -> texture_file_name.c_str () , "rb" );
 
-        data = new unsigned char [ width * height * 3 ];
+            if ( !file ) return;
 
-        fread ( data, width * height, 3, file );
-        fclose ( file );
+            fread ( data, w * h * 3, 1, file );
+            fclose ( file );
 
-        glGenTextures ( 1, & this -> texture );
-        glBindTexture ( GL_TEXTURE_2D, this -> texture );
-        glTexEnvf ( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
+        } catch ( std::exception & error ) {
 
-        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+            std::cout << "Loading Texture Error: " << error.what () << std::endl;
+
+        }
+
+        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
 
         glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
         glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
 
-        glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data );
+        glGenTextures ( 1, & this -> texture );
+        glBindTexture ( GL_TEXTURE_2D, this -> texture );
 
-        delete data;
+        glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data );
+
+        delete [] data;
 
     };
 
     void Object::setTexture ( const char * file_name, const int width, const int height ) {
 
-        this -> loadTexture ( file_name, width, height );
+        this -> texture_file_name = file_name;
+        this -> texture_width = width;
+        this -> texture_height = height;
+
+        this -> loadTexture ();
 
     };
 

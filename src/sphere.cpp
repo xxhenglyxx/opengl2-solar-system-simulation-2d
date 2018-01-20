@@ -15,13 +15,21 @@ namespace NonStd {
 
         glPushMatrix ();
 
+            if ( this -> texture_file_name != "" ) {
+
+                glEnable ( GL_TEXTURE_2D );
+                glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
+                glBindTexture( GL_TEXTURE_2D, this -> texture );
+
+            }
+
             glBegin ( GL_POINTS );
 
                 for ( ; angle < 360; ++ angle ) {
 
                     value = angle * degree_to_rad;
 
-                    for ( ; angle2 < 360; ++ angle2 ) {
+                    for ( ; angle2 < 180; ++ angle2 ) {
 
                         value2 = angle2 * degree_to_rad;
 
@@ -29,13 +37,19 @@ namespace NonStd {
 
                             this -> calculateX ( value, value2 ),
                             this -> calculateY ( value, value2 ),
-                            this -> calculateZ ( value2 )
+                            this -> calculateZ ( value )
 
                         );
 
                     }
 
                     angle2 = 0;
+
+                }
+
+                if ( this -> texture_file_name != "" ) {
+
+                    glDisable ( GL_TEXTURE_2D );
 
                 }
 
