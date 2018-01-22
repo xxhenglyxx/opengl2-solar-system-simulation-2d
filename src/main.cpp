@@ -116,21 +116,25 @@ void modelInit () {
     // move to proper position to for object for better viewing
     sun.translateZ ( -90.0 ); 
     // set object texture
-    sun.setTexture ( "resources/earth.jpg", 100, 100 );
+    sun.setTexture ( "resources/earth.png", 100, 100 );
     // spin default is false, toggle it for spinning
     sun.toggleSpin (); 
+
+    space.setVisible ( true );
+    space.translateZ ( .01 ); // directly center of camera
+    space.setTexture ( "resources/space.png", 100, 100 );
 
     earth.setVisible ( true );
     earth.translateZ ( -90.0 );
     earth.translateX ( 26.0 );
-    earth.setTexture ( "resources/earth.jpg", 100, 100 );
+    earth.setTexture ( "resources/earth.png", 100, 100 );
     earth.toggleSpin ();
     earth.setSpinSpeed ( 2 );
 
     moon.setVisible ( true );
     moon.translateZ ( -90.0 );
     moon.translateX ( 20.0 );
-    moon.setTexture ( "resources/earth.jpg", 100, 100 );
+    moon.setTexture ( "resources/earth.png", 100, 100 );
     moon.toggleSpin ();
 
 };

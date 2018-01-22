@@ -38,7 +38,7 @@ namespace NonStd {
 
         }
 
-        glBegin ( GL_POINTS );
+        glBegin ( GL_TRIANGLE_FAN );
 
             for ( ; angle < 360; ++ angle ) {
 
