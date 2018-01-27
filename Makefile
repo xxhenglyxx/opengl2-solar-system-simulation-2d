@@ -204,6 +204,60 @@ src/object.cpp.s:
 	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/object.cpp.s
 .PHONY : src/object.cpp.s
 
+src/orbit_path.o: src/orbit_path.cpp.o
+
+.PHONY : src/orbit_path.o
+
+# target to build an object file
+src/orbit_path.cpp.o:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o
+.PHONY : src/orbit_path.cpp.o
+
+src/orbit_path.i: src/orbit_path.cpp.i
+
+.PHONY : src/orbit_path.i
+
+# target to preprocess a source file
+src/orbit_path.cpp.i:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.i
+.PHONY : src/orbit_path.cpp.i
+
+src/orbit_path.s: src/orbit_path.cpp.s
+
+.PHONY : src/orbit_path.s
+
+# target to generate assembly for a file
+src/orbit_path.cpp.s:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.s
+.PHONY : src/orbit_path.cpp.s
+
+src/space.o: src/space.cpp.o
+
+.PHONY : src/space.o
+
+# target to build an object file
+src/space.cpp.o:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/space.cpp.o
+.PHONY : src/space.cpp.o
+
+src/space.i: src/space.cpp.i
+
+.PHONY : src/space.i
+
+# target to preprocess a source file
+src/space.cpp.i:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/space.cpp.i
+.PHONY : src/space.cpp.i
+
+src/space.s: src/space.cpp.s
+
+.PHONY : src/space.s
+
+# target to generate assembly for a file
+src/space.cpp.s:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/space.cpp.s
+.PHONY : src/space.cpp.s
+
 src/sphere.o: src/sphere.cpp.o
 
 .PHONY : src/sphere.o
@@ -249,6 +303,12 @@ help:
 	@echo "... src/object.o"
 	@echo "... src/object.i"
 	@echo "... src/object.s"
+	@echo "... src/orbit_path.o"
+	@echo "... src/orbit_path.i"
+	@echo "... src/orbit_path.s"
+	@echo "... src/space.o"
+	@echo "... src/space.i"
+	@echo "... src/space.s"
 	@echo "... src/sphere.o"
 	@echo "... src/sphere.i"
 	@echo "... src/sphere.s"

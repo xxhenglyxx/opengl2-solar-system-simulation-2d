@@ -5,14 +5,28 @@ CMakeFiles/solar-system-simulation.dir/src/main.cpp.o
  /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/main.cpp
  include/modules.h
  include/object.h
+ include/orbit_path.h
+ include/space.h
  include/sphere.h
 CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o
  /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp
  include/modules.h
 CMakeFiles/solar-system-simulation.dir/src/object.cpp.o
  /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.cpp
+ include/modules.h
  include/object.h
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o
+ /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.cpp
+ include/modules.h
+ include/object.h
+ include/orbit_path.h
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o
+ /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.cpp
+ include/modules.h
+ include/object.h
+ include/space.h
 CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o
  /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.cpp
+ include/modules.h
  include/object.h
  include/sphere.h

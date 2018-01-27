@@ -4,15 +4,29 @@
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/modules.h
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/object.h
+CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/orbit_path.h
+CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/space.h
 CMakeFiles/solar-system-simulation.dir/src/main.cpp.o: include/sphere.h
 
 CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o: src/modules.cpp
 CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o: include/modules.h
 
 CMakeFiles/solar-system-simulation.dir/src/object.cpp.o: src/object.cpp
+CMakeFiles/solar-system-simulation.dir/src/object.cpp.o: include/modules.h
 CMakeFiles/solar-system-simulation.dir/src/object.cpp.o: include/object.h
 
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o: src/orbit_path.cpp
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o: include/modules.h
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o: include/object.h
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o: include/orbit_path.h
+
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o: src/space.cpp
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o: include/modules.h
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o: include/object.h
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o: include/space.h
+
 CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o: src/sphere.cpp
+CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o: include/modules.h
 CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o: include/object.h
 CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o: include/sphere.h
 

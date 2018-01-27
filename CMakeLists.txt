@@ -25,6 +25,8 @@ add_executable(
     src/modules.cpp
     src/object.cpp
     src/sphere.cpp
+    src/space.cpp
+    src/orbit_path.cpp
 )
 
 target_link_libraries(

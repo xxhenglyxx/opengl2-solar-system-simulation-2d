@@ -1,11 +1,6 @@
 
-#if __APPLE__
-#include <OpenGL/gl.h>
-#elif __WINDOW__
-#include <GL/gl.h>
-#endif
 
-#include <iostream>
+#include "modules.h"
 
 #ifndef OBJECT_H
 #define OBJECT_H
@@ -31,14 +26,22 @@ namespace NonStd {
             void loadTexture ();
             void freeTexture ();
 
+            // void integral ();
+            // void doubleIntegral ();
+            // void trippleIntegral ();
+
         public:
 
             Object ();
-            ~Object ();
+            virtual ~Object ();
 
             void translateX ( const double x );
             void translateY ( const double y );
             void translateZ ( const double z );
+
+            void setCoordinateX ( const double x );
+            void setCoordinateY ( const double y );
+            void setCoordinateZ ( const double z );
 
             void rotateX ( const double angle_degree );
             void rotateY ( const double angle_degree );
@@ -53,6 +56,7 @@ namespace NonStd {
             void setVisible ( const bool visibility );
 
             virtual void draw ();
+            // void drawGenericModel ( const std::string equation );
 
     };
 

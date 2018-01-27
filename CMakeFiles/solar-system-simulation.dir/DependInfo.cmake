@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/main.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/main.cpp.o"
   "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o"
   "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/object.cpp.o"
+  "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o"
+  "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/space.cpp.o"
   "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.cpp" "/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

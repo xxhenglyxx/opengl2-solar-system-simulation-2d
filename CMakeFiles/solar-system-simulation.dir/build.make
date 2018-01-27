@@ -153,12 +153,62 @@ CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o.provides: CMakeFiles/sol
 CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o.provides.build: CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o
 
 
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o: CMakeFiles/solar-system-simulation.dir/flags.make
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o: src/space.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solar-system-simulation.dir/src/space.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solar-system-simulation.dir/src/space.cpp.o -c /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.cpp
+
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar-system-simulation.dir/src/space.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.cpp > CMakeFiles/solar-system-simulation.dir/src/space.cpp.i
+
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar-system-simulation.dir/src/space.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.cpp -o CMakeFiles/solar-system-simulation.dir/src/space.cpp.s
+
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.requires:
+
+.PHONY : CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.requires
+
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.provides: CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.requires
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.provides.build
+.PHONY : CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.provides
+
+CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.provides.build: CMakeFiles/solar-system-simulation.dir/src/space.cpp.o
+
+
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o: CMakeFiles/solar-system-simulation.dir/flags.make
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o: src/orbit_path.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o -c /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.cpp
+
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.cpp > CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.i
+
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.cpp -o CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.s
+
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.requires:
+
+.PHONY : CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.requires
+
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.provides: CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.requires
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.provides.build
+.PHONY : CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.provides
+
+CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.provides.build: CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o
+
+
 # Object files for target solar-system-simulation
 solar__system__simulation_OBJECTS = \
 "CMakeFiles/solar-system-simulation.dir/src/main.cpp.o" \
 "CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o" \
 "CMakeFiles/solar-system-simulation.dir/src/object.cpp.o" \
-"CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o"
+"CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o" \
+"CMakeFiles/solar-system-simulation.dir/src/space.cpp.o" \
+"CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o"
 
 # External object files for target solar-system-simulation
 solar__system__simulation_EXTERNAL_OBJECTS =
@@ -167,9 +217,11 @@ bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/main.cpp
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/object.cpp.o
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o
+bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/space.cpp.o
+bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/build.make
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/solar-system-simulation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bin/solar-system-simulation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solar-system-simulation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -181,6 +233,8 @@ CMakeFiles/solar-system-simulation.dir/requires: CMakeFiles/solar-system-simulat
 CMakeFiles/solar-system-simulation.dir/requires: CMakeFiles/solar-system-simulation.dir/src/modules.cpp.o.requires
 CMakeFiles/solar-system-simulation.dir/requires: CMakeFiles/solar-system-simulation.dir/src/object.cpp.o.requires
 CMakeFiles/solar-system-simulation.dir/requires: CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o.requires
+CMakeFiles/solar-system-simulation.dir/requires: CMakeFiles/solar-system-simulation.dir/src/space.cpp.o.requires
+CMakeFiles/solar-system-simulation.dir/requires: CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o.requires
 
 .PHONY : CMakeFiles/solar-system-simulation.dir/requires
 

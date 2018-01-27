@@ -1,6 +1,12 @@
 
 #include "object.h"
+
+#if __APPLE__
 #include <GLUT/glut.h>
+#elif __WINDOW__
+#include <GL/freeglut.h>
+#endif
+
 #include <math.h>
 
 #ifndef SPHERE_H
@@ -28,6 +34,7 @@ namespace NonStd {
             Sphere ( const double radius = 10 );
 
             double getSpinSpeed () const;
+            double getRadius () const;
 
             void toggleSpin ();
             void setSpinSpeed ( const double speed );

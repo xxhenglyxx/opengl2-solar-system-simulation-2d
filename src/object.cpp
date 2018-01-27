@@ -13,6 +13,24 @@ namespace NonStd {
 
     };
 
+    void Object::setCoordinateX ( const double x ) {
+
+        this -> coordinate [ 0 ] = x;
+
+    };
+
+    void Object::setCoordinateY ( const double y ) {
+
+        this -> coordinate [ 1 ] = y;
+
+    };
+
+    void Object::setCoordinateZ ( const double z ) {
+
+        this -> coordinate [ 2 ] = z;
+
+    };
+
     bool Object::isObjectShown () const {
 
         return this -> isShow;
@@ -85,13 +103,21 @@ namespace NonStd {
 
         glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data );
 
+        if ( glGetError () ) {
+
+            NonStd::log ( "glTexImage2D Error" );
+            
+        }
+
         glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
 
-        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR );
 
         glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
         glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+
+        gluBuild2DMipmaps ( GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data );
 
         delete [] data;
 
@@ -137,7 +163,7 @@ namespace NonStd {
     
     void Object::translateZ ( const double z ) {
 
-        this -> coordinate [ 2 ] = z;
+        this -> coordinate [ 2 ] += z;
 
     };
 

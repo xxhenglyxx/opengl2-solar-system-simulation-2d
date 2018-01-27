@@ -13,10 +13,10 @@ modules.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.h
 sphere.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.h
-GLUT/glut.h
--
-GL/freeglut.h
--
+space.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.h
+orbit_path.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.h
 
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp
 modules.h
@@ -25,6 +25,14 @@ modules.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.cpp
 object.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.h
+
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.cpp
+orbit_path.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.h
+
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.cpp
+space.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.h
 
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.cpp
 sphere.h
@@ -43,17 +51,27 @@ GL/glu.h
 -
 
 include/object.h
-OpenGL/gl.h
+modules.h
+include/modules.h
+
+include/orbit_path.h
+object.h
+include/object.h
+math.h
 -
-GL/gl.h
--
-iostream
--
+
+include/space.h
+modules.h
+include/modules.h
+object.h
+include/object.h
 
 include/sphere.h
 object.h
 include/object.h
 GLUT/glut.h
+-
+GL/freeglut.h
 -
 math.h
 -

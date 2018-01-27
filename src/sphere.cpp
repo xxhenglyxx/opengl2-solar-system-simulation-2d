@@ -7,6 +7,12 @@ namespace NonStd {
 
     };
 
+    double Sphere::getRadius () const {
+
+        return this -> radius;
+
+    };
+
     void Sphere::toggleSpin () {
 
         this -> is_spin = ! this -> is_spin;
@@ -28,7 +34,7 @@ namespace NonStd {
     void Sphere::render () {
 
         unsigned int angle = 0, angle2 = 0;
-        const double degree_to_rad = 3.14 / 180.0;
+        const double & degree_to_rad = NonStd::DEGREE_TO_RAD;
         double value = .0, value2 = .0;
 
         if ( this -> texture_file_name != "" ) {
@@ -38,7 +44,7 @@ namespace NonStd {
 
         }
 
-        glBegin ( GL_TRIANGLE_FAN );
+        glBegin ( GL_POINTS );
 
             for ( ; angle < 360; ++ angle ) {
 
@@ -47,6 +53,9 @@ namespace NonStd {
                 for ( ; angle2 < 180; ++ angle2 ) {
 
                     value2 = angle2 * degree_to_rad;
+
+                    glTexCoord2d ( .0, .0 );
+                    glTexCoord2d ( 1.0, 1.0 );
 
                     glVertex3d (
 
@@ -74,28 +83,24 @@ namespace NonStd {
 
     void Sphere::draw () {
 
-        glPushMatrix ();
+        glTranslated (
 
-            glTranslated (
+            this -> coordinate [ 0 ],
+            this -> coordinate [ 1 ],
+            this -> coordinate [ 2 ]
 
-                this -> coordinate [ 0 ],
-                this -> coordinate [ 1 ],
-                this -> coordinate [ 2 ]
+        );
 
-            );
+        glRotated (
 
-            glRotated (
+            this -> angle_degree,
+            this -> rotation [ 0 ],
+            this -> rotation [ 1 ],
+            this -> rotation [ 2 ]
 
-                this -> angle_degree,
-                this -> rotation [ 0 ],
-                this -> rotation [ 1 ],
-                this -> rotation [ 2 ]
+        );
 
-            );
-
-            this -> render ();
-
-        glPopMatrix ();
+        this -> render ();
 
     };
 
