@@ -55,6 +55,8 @@ namespace NonStd {
             void setTexture ( const char * file_name, const int width, const int height );
             void setVisible ( const bool visibility );
 
+            void setRelativeTo ( Object & object );
+
             virtual void draw ();
             // void drawGenericModel ( const std::string equation );
 

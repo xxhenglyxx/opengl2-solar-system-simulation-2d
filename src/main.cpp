@@ -18,12 +18,14 @@ NonStd::Space space = NonStd::Space ( 200 );
 NonStd::Camera camera = NonStd::Camera ();
 NonStd::OrbitPath earthPath = NonStd::OrbitPath ( sun.getRadius () + NonStd::EARTH_SUN_DISTANCE );
 
-int global_angle_degree = 0;
-double calculation1 = .0, calculation2 = .0;
+double earth_rotate_angle = .0;
+double moon_rotate_angle = .0;
 
 void render ();
 void modelInit ();
 void idle ();
+void moonIdle ();
+void earthIdle ();
 void windowOnChange ( int width, int height );
 void mouseOnDrag ( int x, int y );
 
@@ -35,8 +37,11 @@ int main ( int args_len, char ** args_context ) {
     glutInitWindowPosition ( 100, 100 );
     glutCreateWindow ( "Solar System Simulation" );
 
-    glEnable ( GL_NORMALIZE );
+    // glEnable ( GL_NORMALIZE );
     glEnable ( GL_COLOR_MATERIAL );
+    glEnable ( GL_DEPTH_TEST );
+    // glEnable ( GL_LIGHTING );
+    // glEnable ( GL_LIGHT0 );
     // top view
     camera.lookAt ( 0.0, 189.0, .0, .0, -200.0, -1.0, .0, 1.0, .0 );
     // front view
@@ -50,7 +55,6 @@ int main ( int args_len, char ** args_context ) {
     glutDisplayFunc ( render );
     glutReshapeFunc ( windowOnChange );
     // glutMotionFunc ( mouseOnDrag );
-
     // global idle func
     glutIdleFunc ( idle );
 
@@ -65,7 +69,7 @@ int main ( int args_len, char ** args_context ) {
 void render () {
 
     glClearColor ( .2, .3, .5, .8 );
-    glClear ( GL_COLOR_BUFFER_BIT );
+    glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
     glPushMatrix ();
 
@@ -124,7 +128,7 @@ void render () {
 void windowOnChange ( int width, int height ) {
 
     glViewport ( 0, 0, width, height );
-    
+
     NonStd::setPerspectiveView ( 60, static_cast < GLfloat > ( width ) / static_cast < GLfloat > ( height ), .01, 600.0 );
 
 };
@@ -137,34 +141,55 @@ void mouseOnDrag ( int x, int y ) {
 
 };
 
-void idle () {
+void earthIdle () {
 
-    if ( global_angle_degree % 360 == 0 ) {
+    if ( earth_rotate_angle > 360 ) {
 
-        global_angle_degree = 0;
+        earth_rotate_angle = .0;
 
     }
 
-    sun.rotateY ( sun.getSpinSpeed () - 9.8 );
-    calculation1 = NonStd::EARTH_SUN_DISTANCE + sun.getRadius ();
-    calculation2 = global_angle_degree * NonStd::DEGREE_TO_RAD;
+    earth.setRelativeTo ( sun );
+
+    // sun.rotateY ( sun.getSpinSpeed () - 9.8 );
+    const double calculation1 = NonStd::EARTH_SUN_DISTANCE + sun.getRadius ();
+    const double calculation2 = earth_rotate_angle * NonStd::DEGREE_TO_RAD;
 
     earth.rotateY ( earth.getSpinSpeed () - 9.8 );
     // avoid condition checking by directly mutate the coordinate instead of increment
     earth.setCoordinateX ( calculation1 * cos ( calculation2 ) );
     earth.setCoordinateZ ( calculation1 * sin ( calculation2 ) );
-    // earth.translateX ( cos ( global_angle_degree * NonStd::DEGREE_TO_RAD ) );
-    // earth.translateZ ( sin ( global_angle_degree * NonStd::DEGREE_TO_RAD ) );
 
-    calculation1 = calculation1 + NonStd::EARTH_MOON_DISTANCE;
-
-    moon.rotateY ( earth.getSpinSpeed () - 9.8 );
-    moon.setCoordinateX ( calculation1 * cos ( calculation2 ) );
-    moon.setCoordinateZ ( calculation1 * sin ( calculation2 ) );
-
-    ++ global_angle_degree;
+    earth_rotate_angle += NonStd::EARTH_ROTATE_SPEED;
 
     glutPostRedisplay ();
+
+};
+
+void moonIdle () {
+
+    if ( moon_rotate_angle > 360 ) {
+
+        moon_rotate_angle = .0;
+
+    }
+
+    moon.setRelativeTo ( earth );
+
+    const double calculation2 = moon_rotate_angle * NonStd::DEGREE_TO_RAD;
+
+    moon.rotateY ( moon.getSpinSpeed () - 9.8 );
+    moon.translateX ( NonStd::EARTH_MOON_DISTANCE * cos ( calculation2 ) );
+    moon.translateZ ( NonStd::EARTH_MOON_DISTANCE * sin ( calculation2 ) );
+
+    moon_rotate_angle += NonStd::MOON_ROTATE_SPEED * 20;
+
+};
+
+void idle () {
+
+    earthIdle ();
+    moonIdle ();
 
 };
 
@@ -181,7 +206,7 @@ void modelInit () {
     space.setTexture ( "resources/bmp/space.bmp", 256, 256 );
 
     earth.setVisible ( true );
-    earth.setTexture ( "resources/bmp/earth.bmp", 256, 256 );
+    earth.setTexture ( "resources/earth.png", 256, 256 );
     earth.toggleSpin ();
     earth.setSpinSpeed ( 2 );
     earthPath.setVisible ( true );
@@ -189,6 +214,6 @@ void modelInit () {
     moon.setVisible ( true );
     // moon.setTexture ( "resources/earth.png", 256, 256 );
     moon.toggleSpin ();
-    earth.setSpinSpeed ( .3 );
+    moon.setSpinSpeed ( .3 );
 
 };

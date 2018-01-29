@@ -20,9 +20,12 @@ namespace NonStd {
     constexpr double RADIAN_TO_DEG = 57.2957795129;
     constexpr double PIOVERTWO = 1.570796326795;
     constexpr double FLATTENING = 1.0/298.26;
+
     constexpr double GRAVITY = 9.8;
     constexpr double EARTH_SUN_DISTANCE = 15.0;
+    constexpr double EARTH_ROTATE_SPEED = .3;
     constexpr double EARTH_MOON_DISTANCE = 5.0;
+    constexpr double MOON_ROTATE_SPEED = .1;
 
     class Camera {
 

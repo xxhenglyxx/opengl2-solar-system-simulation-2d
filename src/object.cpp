@@ -101,23 +101,24 @@ namespace NonStd {
         glGenTextures ( 1, & this -> texture );
         glBindTexture ( GL_TEXTURE_2D, this -> texture );
 
-        glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data );
-
         if ( glGetError () ) {
 
             NonStd::log ( "glTexImage2D Error" );
             
+        } else {
+
+            glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
+
+            glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+            glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+
+            glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+            glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+
+            glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data );
+            gluBuild2DMipmaps ( GL_TEXTURE_2D, 3, w, h, GL_RGBA, GL_UNSIGNED_BYTE, data );
+
         }
-
-        glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
-
-        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
-        glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR );
-
-        glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
-        glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
-
-        gluBuild2DMipmaps ( GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data );
 
         delete [] data;
 
@@ -164,6 +165,14 @@ namespace NonStd {
     void Object::translateZ ( const double z ) {
 
         this -> coordinate [ 2 ] += z;
+
+    };
+
+    void Object::setRelativeTo ( Object & object ) {
+
+        this -> coordinate [ 0 ] = object.coordinate [ 0 ];
+        this -> coordinate [ 1 ] = object.coordinate [ 1 ];
+        this -> coordinate [ 2 ] = object.coordinate [ 2 ];
 
     };
 
