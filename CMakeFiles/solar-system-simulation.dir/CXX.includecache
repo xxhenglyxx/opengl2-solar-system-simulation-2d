@@ -6,17 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app/app.cpp
+app.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app/app.h
+
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app/idle.cpp
+app.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app/app.h
+
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app/render.cpp
+app.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app/app.h
+
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/main.cpp
-object.h
-/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/object.h
-modules.h
-/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.h
-sphere.h
-/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.h
-space.h
-/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/space.h
-orbit_path.h
-/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/orbit_path.h
+app.h
+/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/app.h
 
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/modules.cpp
 modules.h
@@ -37,6 +41,18 @@ space.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.cpp
 sphere.h
 /Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/src/sphere.h
+
+include/app.h
+object.h
+include/object.h
+modules.h
+include/modules.h
+sphere.h
+include/sphere.h
+space.h
+include/space.h
+orbit_path.h
+include/orbit_path.h
 
 include/modules.h
 iostream

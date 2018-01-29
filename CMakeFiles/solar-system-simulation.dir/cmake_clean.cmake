@@ -5,6 +5,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/solar-system-simulation.dir/src/sphere.cpp.o"
   "CMakeFiles/solar-system-simulation.dir/src/space.cpp.o"
   "CMakeFiles/solar-system-simulation.dir/src/orbit_path.cpp.o"
+  "CMakeFiles/solar-system-simulation.dir/src/app/app.cpp.o"
+  "CMakeFiles/solar-system-simulation.dir/src/app/render.cpp.o"
+  "CMakeFiles/solar-system-simulation.dir/src/app/idle.cpp.o"
   "bin/solar-system-simulation.pdb"
   "bin/solar-system-simulation"
 )

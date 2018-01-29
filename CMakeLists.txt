@@ -27,6 +27,9 @@ add_executable(
     src/sphere.cpp
     src/space.cpp
     src/orbit_path.cpp
+    src/app/app.cpp
+    src/app/render.cpp
+    src/app/idle.cpp
 )
 
 target_link_libraries(

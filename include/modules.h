@@ -22,10 +22,16 @@ namespace NonStd {
     constexpr double FLATTENING = 1.0/298.26;
 
     constexpr double GRAVITY = 9.8;
-    constexpr double EARTH_SUN_DISTANCE = 15.0;
+    constexpr double EARTH_SUN_DISTANCE = 30.15;
     constexpr double EARTH_ROTATE_SPEED = .3;
-    constexpr double EARTH_MOON_DISTANCE = 5.0;
-    constexpr double MOON_ROTATE_SPEED = .1;
+    constexpr double EARTH_MOON_DISTANCE = 10.38;
+    constexpr double MOON_ROTATE_SPEED = .0036;
+    constexpr double VENUS_SUN_DISTANCE = 20.10;
+    constexpr double VENUS_ROTATE_SPEED = .0022;
+    constexpr double MERCURY_SUN_DISTANCE = 10.57;
+    constexpr double MERCURY_ROTATE_SPEED = .03;
+    constexpr double MARS_SUN_DISTANCE = 35.279;
+    constexpr double MARS_ROTATE_SPEED = .23;
 
     class Camera {
 

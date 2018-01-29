@@ -123,6 +123,87 @@ solar-system-simulation/fast:
 	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/build
 .PHONY : solar-system-simulation/fast
 
+src/app/app.o: src/app/app.cpp.o
+
+.PHONY : src/app/app.o
+
+# target to build an object file
+src/app/app.cpp.o:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/app.cpp.o
+.PHONY : src/app/app.cpp.o
+
+src/app/app.i: src/app/app.cpp.i
+
+.PHONY : src/app/app.i
+
+# target to preprocess a source file
+src/app/app.cpp.i:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/app.cpp.i
+.PHONY : src/app/app.cpp.i
+
+src/app/app.s: src/app/app.cpp.s
+
+.PHONY : src/app/app.s
+
+# target to generate assembly for a file
+src/app/app.cpp.s:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/app.cpp.s
+.PHONY : src/app/app.cpp.s
+
+src/app/idle.o: src/app/idle.cpp.o
+
+.PHONY : src/app/idle.o
+
+# target to build an object file
+src/app/idle.cpp.o:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/idle.cpp.o
+.PHONY : src/app/idle.cpp.o
+
+src/app/idle.i: src/app/idle.cpp.i
+
+.PHONY : src/app/idle.i
+
+# target to preprocess a source file
+src/app/idle.cpp.i:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/idle.cpp.i
+.PHONY : src/app/idle.cpp.i
+
+src/app/idle.s: src/app/idle.cpp.s
+
+.PHONY : src/app/idle.s
+
+# target to generate assembly for a file
+src/app/idle.cpp.s:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/idle.cpp.s
+.PHONY : src/app/idle.cpp.s
+
+src/app/render.o: src/app/render.cpp.o
+
+.PHONY : src/app/render.o
+
+# target to build an object file
+src/app/render.cpp.o:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/render.cpp.o
+.PHONY : src/app/render.cpp.o
+
+src/app/render.i: src/app/render.cpp.i
+
+.PHONY : src/app/render.i
+
+# target to preprocess a source file
+src/app/render.cpp.i:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/render.cpp.i
+.PHONY : src/app/render.cpp.i
+
+src/app/render.s: src/app/render.cpp.s
+
+.PHONY : src/app/render.s
+
+# target to generate assembly for a file
+src/app/render.cpp.s:
+	$(MAKE) -f CMakeFiles/solar-system-simulation.dir/build.make CMakeFiles/solar-system-simulation.dir/src/app/render.cpp.s
+.PHONY : src/app/render.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -294,6 +375,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... solar-system-simulation"
+	@echo "... src/app/app.o"
+	@echo "... src/app/app.i"
+	@echo "... src/app/app.s"
+	@echo "... src/app/idle.o"
+	@echo "... src/app/idle.i"
+	@echo "... src/app/idle.s"
+	@echo "... src/app/render.o"
+	@echo "... src/app/render.i"
+	@echo "... src/app/render.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
