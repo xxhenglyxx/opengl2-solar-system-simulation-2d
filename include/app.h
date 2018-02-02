@@ -39,7 +39,7 @@ extern void render ();
 extern void modelInit ();
 extern void idle ();
 
-extern void spaceIdle ( int direction );
+extern void spaceIdle ();
 extern void pathIdle ();
 extern void sunIdle ();
 extern void moonIdle ();
