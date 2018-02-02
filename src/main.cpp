@@ -30,6 +30,7 @@ int main ( int args_len, char ** args_context ) {
     glutDisplayFunc ( render );
     glutReshapeFunc ( windowOnChange );
     glutMotionFunc ( mouseOnDrag );
+    glutKeyboardFunc ( keyboardOnPress );
     // global idle func
     glutIdleFunc ( idle );
 

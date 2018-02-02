@@ -32,11 +32,14 @@ extern double mercury_rotate_angle;
 extern double mars_rotate_angle;
 
 extern double mouse_position [ 3 ];
+extern double app_rotation_speed;
+extern int app_rotation_direction;
 
 extern void render ();
 extern void modelInit ();
 extern void idle ();
 
+extern void spaceIdle ( int direction );
 extern void pathIdle ();
 extern void sunIdle ();
 extern void moonIdle ();
@@ -47,5 +50,6 @@ extern void marsIdle ();
 
 extern void windowOnChange ( int width, int height );
 extern void mouseOnDrag ( int x, int y );
+extern void keyboardOnPress ( unsigned char key, int x, int y );
 
 #endif

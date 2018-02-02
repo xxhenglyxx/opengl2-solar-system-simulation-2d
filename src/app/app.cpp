@@ -21,6 +21,8 @@ double venus_rotate_angle = .0;
 double mercury_rotate_angle = .0;
 double mars_rotate_angle = .0;
 double mouse_position [ 3 ] = { .0, .0, .0 };
+double app_rotation_speed = .0;
+int app_rotate_direction = 0;
 
 void windowOnChange ( int width, int height ) {
 
@@ -30,39 +32,85 @@ void windowOnChange ( int width, int height ) {
 
 };
 
+void spaceIdle () {
+
+    -- app_rotation_speed;
+
+    switch ( app_rotate_direction ) {
+
+        case 0: {
+
+            space.rotateY ( 1.0 );
+            break;
+
+        }
+
+        case 1: {
+
+            space.rotateY ( -1.0 );
+            break;
+
+        }
+
+        case 2: {
+
+            space.rotateX ( 1.0 );
+            break;
+
+        }
+
+        case 3: {
+
+            space.rotateX ( -1.0 );
+            break;
+
+        }
+
+    }
+
+};
+
 void mouseOnDrag ( int x, int y ) {
+
+    if ( x != mouse_position [ 0 ] || y != mouse_position [ 1 ] ) {
+
+        app_rotation_speed = 10.0;
+
+    }
 
     if ( x > mouse_position [ 0 ] ) {
 
         mouse_position [ 0 ] = x;
-
-        space.rotateY ( 10.0 );
+        app_rotate_direction = 0;
 
     } else if ( x < mouse_position [ 0 ] ) {
 
         mouse_position [ 0 ] = x;
-
-        space.rotateY ( -10.0 );
+        app_rotate_direction = 1;
 
     }
 
     if ( y > mouse_position [ 1 ] ) {
 
         mouse_position [ 1 ] = y;
-
-        space.rotateX ( 10.0 );
+        app_rotate_direction = 2;
 
     } else if ( y < mouse_position [ 1 ] ) {
 
         mouse_position [ 1 ] = y;
-
-        space.rotateX ( -10.0 );
+        app_rotate_direction = 3;
 
     }
 
 };
 
 void idle () {
+
+    if ( app_rotation_speed > .0 ) {
+
+        spaceIdle ();
+
+    }
 
     pathIdle ();
     sunIdle ();
@@ -108,5 +156,43 @@ void modelInit () {
 
     mars.setVisible ( true );
     marsPath.setVisible ( true );
+
+};
+
+void keyboardOnPress ( unsigned char key, int x, int y ) {
+
+    app_rotation_speed = 10.0;
+
+    switch ( key ) {
+
+        case 'a': {
+
+            app_rotate_direction = 0;
+            break;
+
+        }
+
+        case 'd': {
+
+            app_rotate_direction = 1;
+            break;
+
+        }
+
+        case 'w': {
+
+            app_rotate_direction = 2;
+            break;
+
+        }
+
+        case 's': {
+
+            app_rotate_direction = 3;
+            break;
+
+        }
+
+    }
 
 };
