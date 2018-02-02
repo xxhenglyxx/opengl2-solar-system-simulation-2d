@@ -100,47 +100,60 @@ namespace NonStd {
     void Object::loadTexture () {
 
         int & w = this -> texture_width, & h = this -> texture_height;
-        unsigned char * data = new unsigned char [ w * h * 3 ];
-        FILE * file;
+        // unsigned char * data = new unsigned char [ w * h * 3 ];
+        unsigned char * data;
+        // FILE * file;
 
-        try {
+        // try {
 
-            file = fopen ( this -> texture_file_name.c_str () , "rb" );
+        //     file = fopen ( this -> texture_file_name.c_str () , "rb" );
 
-            if ( !file ) return;
+        //     if ( !file ) return;
 
-            fread ( data, w * h * 3, 1, file );
-            fclose ( file );
+        //     fread ( data, w * h * 3, 1, file );
+        //     fclose ( file );
 
-        } catch ( std::exception & error ) {
+        // } catch ( std::exception & error ) {
 
-            std::cout << "Loading Texture Error: " << error.what () << std::endl;
+        //     std::cout << "Loading Texture Error: " << error.what () << std::endl;
 
-        }
+        // }
 
         glGenTextures ( 1, & this -> texture );
         glBindTexture ( GL_TEXTURE_2D, this -> texture );
 
-        if ( glGetError () ) {
+        data = SOIL_load_image ( this -> texture_file_name.c_str (), & this -> texture_width, & this -> texture_height, 0, SOIL_LOAD_RGB );
 
-            NonStd::log ( "glTexImage2D Error" );
+        glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data );
+
+        SOIL_free_image_data ( data );
+        glGenerateMipmap ( GL_TEXTURE_2D );
+
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        // if ( glGetError () ) {
+
+        //     NonStd::log ( "glTexImage2D Error" );
             
-        } else {
+        // } else {
 
-            glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
+        //     glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL );
 
-            glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
-            glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+        //     glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+        //     glTexParameterf ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR );
 
-            glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
-            glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+        //     glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+        //     glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
 
-            glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data );
-            gluBuild2DMipmaps ( GL_TEXTURE_2D, 3, w, h, GL_RGBA, GL_UNSIGNED_BYTE, data );
+        //     glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data );
+        //     gluBuild2DMipmaps ( GL_TEXTURE_2D, 3, w, h, GL_RGBA, GL_UNSIGNED_BYTE, data );
 
-        }
+        // }
 
-        delete [] data;
+        // delete [] data;
 
     };
 
@@ -150,7 +163,7 @@ namespace NonStd {
         this -> texture_width = width;
         this -> texture_height = height;
 
-        this -> loadTexture ();
+        // this -> loadTexture ();
 
     };
 

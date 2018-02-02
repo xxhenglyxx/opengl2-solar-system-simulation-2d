@@ -6,5 +6,5 @@ CXX_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/GLUT.framework/Headers -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks 
+CXX_INCLUDES = -I/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/include -I/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/lib -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/GLUT.framework/Headers -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks 
 

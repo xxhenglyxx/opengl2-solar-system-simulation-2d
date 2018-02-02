@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.10.1/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.10.2/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.10.1/bin/cmake -E remove -f
+RM = /usr/local/Cellar/cmake/3.10.2/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -298,6 +298,7 @@ bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/app/app.
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/app/render.cpp.o
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/src/app/idle.cpp.o
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/build.make
+bin/solar-system-simulation: lib/libsoil2.a
 bin/solar-system-simulation: CMakeFiles/solar-system-simulation.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shadowlegend/zaman/computer-graphic/solar-system-simulation/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable bin/solar-system-simulation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solar-system-simulation.dir/link.txt --verbose=$(VERBOSE)

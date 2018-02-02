@@ -36,32 +36,34 @@ void spaceIdle () {
 
     -- app_rotation_speed;
 
+    double speed = app_rotation_speed;
+
     switch ( app_rotate_direction ) {
 
         case 0: {
 
-            space.rotateY ( 1.0 );
+            space.rotateY ( speed );
             break;
 
         }
 
         case 1: {
 
-            space.rotateY ( -1.0 );
+            space.rotateY ( -speed );
             break;
 
         }
 
         case 2: {
 
-            space.rotateX ( 1.0 );
+            space.rotateX ( speed );
             break;
 
         }
 
         case 3: {
 
-            space.rotateX ( -1.0 );
+            space.rotateX ( -speed );
             break;
 
         }
@@ -134,8 +136,7 @@ void modelInit () {
     sun.toggleSpin (); 
 
     space.setVisible ( true );
-    // space.rotateZ ( 30 );
-    space.setTexture ( "resources/bmp/space.bmp", 256, 256 );
+    space.setTexture ( "resources/space.png", 256, 256 );
 
     earth.setVisible ( true );
     earth.setTexture ( "resources/earth.png", 256, 256 );

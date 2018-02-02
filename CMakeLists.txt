@@ -4,17 +4,20 @@ cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 project(solar-system-simulation)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(OpenGL)
 find_package(GLUT)
+find_package(SOIL2)
 
 find_library(COCOA Cocoa)
 
 include_directories(
     include
+    lib
     ${GLUT_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
 )
@@ -34,7 +37,8 @@ add_executable(
 
 target_link_libraries(
     solar-system-simulation
-    ${COCOA_LIBRARIES}
-    ${OPENGL_LIBRARIES}
-    ${GLUT_LIBRARIES}
+    ${COCOA_LIBRARY}
+    ${OPENGL_LIBRARY}
+    ${SOIL2_LIBRARY}
+    ${GLUT_LIBRARY}
 )

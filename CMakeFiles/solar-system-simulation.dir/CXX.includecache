@@ -69,6 +69,8 @@ GL/glu.h
 include/object.h
 modules.h
 include/modules.h
+SOIL2/SOIL2.h
+-
 
 include/orbit_path.h
 object.h
@@ -91,4 +93,6 @@ GL/freeglut.h
 -
 math.h
 -
+
+lib/SOIL2/SOIL2.h
 

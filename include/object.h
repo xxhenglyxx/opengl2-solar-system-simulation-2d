@@ -1,6 +1,7 @@
 
 
 #include "modules.h"
+#include <SOIL2/SOIL2.h>
 
 #ifndef OBJECT_H
 #define OBJECT_H

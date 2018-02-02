@@ -79,7 +79,8 @@ namespace NonStd {
         if ( this -> texture_file_name != "" ) {
 
             glEnable ( GL_TEXTURE_2D );
-            glBindTexture( GL_TEXTURE_2D, this -> texture );
+            // glBindTexture( GL_TEXTURE_2D, this -> texture );
+            this -> loadTexture ();
 
         }
 
