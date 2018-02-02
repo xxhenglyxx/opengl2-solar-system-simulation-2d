@@ -47,7 +47,13 @@ namespace NonStd {
 
         this -> angle_degree += angle_degree;
 
-        this -> rotation [ 0 ] = 1.0;
+        if ( this -> rotation [ 0 ] < 1.0 ) {
+
+            this -> rotation [ 0 ] += .01;
+
+        }
+
+        // this -> rotation [ 0 ] = 1.0;
 
     };
 
@@ -55,13 +61,25 @@ namespace NonStd {
 
         this -> angle_degree += angle_degree;
 
-        this -> rotation [ 1 ] = 1.0;
+        if ( this -> rotation [ 1 ] < 1.0 ) {
+
+            this -> rotation [ 1 ] += .01;
+
+        }
+
+        // this -> rotation [ 1 ] = 1.0;
 
     };
 
     void Object::rotateZ ( const double angle_degree ) {
 
         this -> angle_degree += angle_degree;
+
+        if ( this -> rotation [ 2 ] < 1.0 ) {
+
+            this -> rotation [ 2 ] += .01;
+
+        }
 
         this -> rotation [ 2 ] = 1.0;
 
@@ -74,6 +92,8 @@ namespace NonStd {
         delete [] this -> color;
 
         if ( this -> texture_file_name != "" ) glDeleteTextures ( 1, & this -> texture );
+
+        // NonStd::log ( "Object Destroyed Successfully" );
 
     };
 
@@ -173,6 +193,11 @@ namespace NonStd {
         this -> coordinate [ 0 ] = object.coordinate [ 0 ];
         this -> coordinate [ 1 ] = object.coordinate [ 1 ];
         this -> coordinate [ 2 ] = object.coordinate [ 2 ];
+
+        this -> angle_degree = object.angle_degree;
+        this -> rotation [ 0 ] = object.rotation [ 0 ];
+        this -> rotation [ 1 ] = object.rotation [ 1 ];
+        this -> rotation [ 2 ] = object.rotation [ 2 ];
 
     };
 

@@ -20,6 +20,7 @@ double moon_rotate_angle = .0;
 double venus_rotate_angle = .0;
 double mercury_rotate_angle = .0;
 double mars_rotate_angle = .0;
+double mouse_position [ 3 ] = { .0, .0, .0 };
 
 void windowOnChange ( int width, int height ) {
 
@@ -31,16 +32,40 @@ void windowOnChange ( int width, int height ) {
 
 void mouseOnDrag ( int x, int y ) {
 
-    sun.setRelativeTo ( space );
+    if ( x > mouse_position [ 0 ] ) {
 
-    sun.rotateZ ( 1 );
+        mouse_position [ 0 ] = x;
 
-    glutPostRedisplay ();
+        space.rotateY ( 10.0 );
+
+    } else if ( x < mouse_position [ 0 ] ) {
+
+        mouse_position [ 0 ] = x;
+
+        space.rotateY ( -10.0 );
+
+    }
+
+    if ( y > mouse_position [ 1 ] ) {
+
+        mouse_position [ 1 ] = y;
+
+        space.rotateX ( 10.0 );
+
+    } else if ( y < mouse_position [ 1 ] ) {
+
+        mouse_position [ 1 ] = y;
+
+        space.rotateX ( -10.0 );
+
+    }
 
 };
 
 void idle () {
 
+    pathIdle ();
+    sunIdle ();
     earthIdle ();
     moonIdle ();
     venusIdle ();
@@ -61,6 +86,7 @@ void modelInit () {
     sun.toggleSpin (); 
 
     space.setVisible ( true );
+    // space.rotateZ ( 30 );
     space.setTexture ( "resources/bmp/space.bmp", 256, 256 );
 
     earth.setVisible ( true );

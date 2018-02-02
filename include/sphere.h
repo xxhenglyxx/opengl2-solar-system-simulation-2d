@@ -32,6 +32,7 @@ namespace NonStd {
         public:
 
             Sphere ( const double radius = 10 );
+            virtual ~Sphere ();
 
             double getSpinSpeed () const;
             double getRadius () const;

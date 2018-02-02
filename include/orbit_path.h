@@ -16,6 +16,7 @@ namespace NonStd {
         public:
 
             OrbitPath ( const double radius = 10.0 );
+            virtual ~OrbitPath ();
 
             void draw ();
 

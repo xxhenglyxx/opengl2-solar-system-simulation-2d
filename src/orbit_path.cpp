@@ -7,6 +7,12 @@ namespace NonStd {
 
     };
 
+    OrbitPath::~OrbitPath () {
+
+        // NonStd::log ( "OrbitPath Destroyed" );
+
+    };
+
     void OrbitPath::render () {
 
         std::size_t angle = 0;

@@ -7,10 +7,33 @@ namespace NonStd {
 
     };
 
+    Space::~Space () {
+
+        // NonStd::log ( "Space Destroyed" );
+
+    };
+
     void Space::cubeBox () {
 
         glEnable ( GL_TEXTURE_2D );
         glBindTexture( GL_TEXTURE_2D, this -> texture );
+
+        glTranslated (
+
+            this -> coordinate [ 0 ],
+            this -> coordinate [ 1 ],
+            this -> coordinate [ 2 ]
+
+        );
+
+        glRotated (
+
+            this -> angle_degree,
+            this -> rotation [ 0 ],
+            this -> rotation [ 1 ],
+            this -> rotation [ 2 ]
+
+        );
 
         glBegin ( GL_QUADS );
 
@@ -24,9 +47,9 @@ namespace NonStd {
             // glVertex3f( this -> size, this -> size,  this -> size);
 
             glTexCoord2d ( .0, .0 );
-            glTexCoord2d ( 1.0, .0 );
             glTexCoord2d ( .0, 1.0 );
             glTexCoord2d ( 1.0, 1.0 );
+            glTexCoord2d ( 1.0, .0 );
             glVertex3f( this -> size, -this -> size,  this -> size);
             glVertex3f(-this -> size, -this -> size,  this -> size);
             glVertex3f(-this -> size, -this -> size, -this -> size);

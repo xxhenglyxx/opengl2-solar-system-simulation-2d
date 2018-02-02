@@ -14,6 +14,7 @@ namespace NonStd {
             double * coordinate;
             double * rotation;
             double * color;
+            std::string tag;
             double angle_degree;
             bool isShow;
             bool isTextureShow;

@@ -18,6 +18,7 @@ namespace NonStd {
         public:
 
             Space ( const double size = 10.0 );
+            virtual ~Space ();
 
             void draw ();
 

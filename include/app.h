@@ -31,10 +31,14 @@ extern double venus_rotate_angle;
 extern double mercury_rotate_angle;
 extern double mars_rotate_angle;
 
+extern double mouse_position [ 3 ];
+
 extern void render ();
 extern void modelInit ();
 extern void idle ();
 
+extern void pathIdle ();
+extern void sunIdle ();
 extern void moonIdle ();
 extern void earthIdle ();
 extern void venusIdle ();

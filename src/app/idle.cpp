@@ -1,6 +1,21 @@
 
 #include "app.h"
 
+void sunIdle () {
+
+    sun.setRelativeTo ( space );
+
+};
+
+void pathIdle () {
+
+    earthPath.setRelativeTo ( space );
+    marsPath.setRelativeTo ( space );
+    mercuryPath.setRelativeTo ( space );
+    venusPath.setRelativeTo ( space );
+
+};
+
 void earthIdle () {
 
     if ( earth_rotate_angle > 360 ) {
@@ -9,14 +24,14 @@ void earthIdle () {
 
     }
 
-    earth.setRelativeTo ( sun );
+    earth.setRelativeTo ( space );
 
     // sun.rotateY ( sun.getSpinSpeed () );
 
     const double calculation1 = NonStd::EARTH_SUN_DISTANCE + sun.getRadius ();
     const double calculation2 = earth_rotate_angle * NonStd::DEGREE_TO_RAD;
 
-    earth.rotateY ( earth.getSpinSpeed () - 9.8 );
+    // earth.rotateY ( earth.getSpinSpeed () - 9.8 );
     earth.translateX ( calculation1 * cos ( calculation2 ) );
     earth.translateZ ( calculation1 * sin ( calculation2 ) );
 
@@ -36,7 +51,7 @@ void moonIdle () {
 
     const double calculation2 = moon_rotate_angle * NonStd::DEGREE_TO_RAD;
 
-    moon.rotateY ( moon.getSpinSpeed () - 9.8 );
+    // moon.rotateY ( moon.getSpinSpeed () - 9.8 );
     moon.translateX ( NonStd::EARTH_MOON_DISTANCE * cos ( calculation2 ) );
     moon.translateZ ( NonStd::EARTH_MOON_DISTANCE * sin ( calculation2 ) );
 
@@ -52,7 +67,7 @@ void venusIdle () {
 
     }
 
-    venus.setRelativeTo ( sun );
+    venus.setRelativeTo ( space );
 
     const double calculate = venus_rotate_angle * NonStd::DEGREE_TO_RAD;
 
@@ -71,7 +86,7 @@ void mercuryIdle () {
 
     }
 
-    mercury.setRelativeTo ( sun );
+    mercury.setRelativeTo ( space );
 
     const double calculate = mercury_rotate_angle * NonStd::DEGREE_TO_RAD;
 
@@ -90,7 +105,7 @@ void marsIdle () {
 
     }
 
-    mars.setRelativeTo ( sun );
+    mars.setRelativeTo ( space );
 
     const double calculate = mars_rotate_angle * NonStd::DEGREE_TO_RAD;
 

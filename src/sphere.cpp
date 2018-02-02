@@ -7,6 +7,12 @@ namespace NonStd {
 
     };
 
+    Sphere::~Sphere () {
+
+        // NonStd::log ( "Sphere Object Destroyed" );
+
+    };
+
     double Sphere::getRadius () const {
 
         return this -> radius;
@@ -37,13 +43,6 @@ namespace NonStd {
         const double & degree_to_rad = NonStd::DEGREE_TO_RAD;
         double value = .0, value2 = .0;
 
-        if ( this -> texture_file_name != "" ) {
-
-            glEnable ( GL_TEXTURE_2D );
-            glBindTexture( GL_TEXTURE_2D, this -> texture );
-
-        }
-
         glBegin ( GL_POINTS );
 
             for ( ; angle < 360; ++ angle ) {
@@ -73,15 +72,16 @@ namespace NonStd {
 
         glEnd ();
 
-        if ( this -> texture_file_name != "" ) {
-
-            glDisable ( GL_TEXTURE_2D );
-
-        }
-
     };
 
     void Sphere::draw () {
+
+        if ( this -> texture_file_name != "" ) {
+
+            glEnable ( GL_TEXTURE_2D );
+            glBindTexture( GL_TEXTURE_2D, this -> texture );
+
+        }
 
         glTranslated (
 
@@ -101,6 +101,12 @@ namespace NonStd {
         );
 
         this -> render ();
+
+        if ( this -> texture_file_name != "" ) {
+
+            glDisable ( GL_TEXTURE_2D );
+
+        }
 
     };
 
