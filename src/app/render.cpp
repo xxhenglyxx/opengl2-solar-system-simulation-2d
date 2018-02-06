@@ -4,7 +4,10 @@
 void render () {
 
     glClearColor ( .2, .3, .5, .8 );
-    glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glEnable ( GL_NORMALIZE );
+    glEnable ( GL_COLOR_MATERIAL );
+    glEnable ( GL_DEPTH_TEST );
+    glClear ( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
 
     glPushMatrix ();
 
@@ -117,5 +120,6 @@ void render () {
     glPopMatrix ();
 
     glFlush ();
+    glutSwapBuffers ();
 
 };
