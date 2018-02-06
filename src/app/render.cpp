@@ -4,9 +4,6 @@
 void render () {
 
     glClearColor ( .2, .3, .5, .8 );
-    glEnable ( GL_NORMALIZE );
-    glEnable ( GL_COLOR_MATERIAL );
-    glEnable ( GL_DEPTH_TEST );
     glClear ( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
 
     glPushMatrix ();
@@ -17,105 +14,105 @@ void render () {
 
         }
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( sun.isObjectShown () ) {
 
-        if ( sun.isObjectShown () ) {
+                sun.draw ();
 
-            sun.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( earthPath.isObjectShown () ) {
 
-        if ( earthPath.isObjectShown () ) {
+                earthPath.draw ();
 
-            earthPath.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glEnd ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( earth.isObjectShown () ) {
 
-        if ( earth.isObjectShown () ) {
+                earth.draw ();
 
-            earth.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( moon.isObjectShown () ) {
 
-        if ( moon.isObjectShown () ) {
+                moon.draw ();
 
-            moon.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( venus.isObjectShown () ) {
 
-        if ( venus.isObjectShown () ) {
+                venus.draw ();
 
-            venus.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( venusPath.isObjectShown () ) {
 
-        if ( venusPath.isObjectShown () ) {
+                venusPath.draw ();
 
-            venusPath.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( mercury.isObjectShown () ) {
 
-        if ( mercury.isObjectShown () ) {
+                mercury.draw ();
 
-            mercury.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( mercuryPath.isObjectShown () ) {
 
-        if ( mercuryPath.isObjectShown () ) {
+                mercuryPath.draw ();
 
-            mercuryPath.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( mars.isObjectShown () ) {
 
-        if ( mars.isObjectShown () ) {
+                mars.draw ();
 
-            mars.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
-    glPopMatrix ();
+        glPushMatrix ();
 
-    glPushMatrix ();
+            if ( marsPath.isObjectShown () ) {
 
-        if ( marsPath.isObjectShown () ) {
+                marsPath.draw ();
 
-            marsPath.draw ();
+            }
 
-        }
+        glPopMatrix ();
 
     glPopMatrix ();
 
