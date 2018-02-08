@@ -24,7 +24,7 @@ void earthIdle () {
 
     }
 
-    earth.setRelativeTo ( space );
+    earth.setRelativeTo ( earthPath );
 
     // sun.rotateY ( sun.getSpinSpeed () );
 
@@ -47,7 +47,7 @@ void moonIdle () {
 
     }
 
-    moon.setRelativeTo ( earth );
+    moon.setRelativeTo ( earthPath );
 
     const double calculation2 = moon_rotate_angle * NonStd::DEGREE_TO_RAD;
 
@@ -67,7 +67,7 @@ void venusIdle () {
 
     }
 
-    venus.setRelativeTo ( space );
+    venus.setRelativeTo ( venusPath );
 
     const double calculate = venus_rotate_angle * NonStd::DEGREE_TO_RAD;
 
@@ -86,7 +86,7 @@ void mercuryIdle () {
 
     }
 
-    mercury.setRelativeTo ( space );
+    mercury.setRelativeTo ( mercuryPath );
 
     const double calculate = mercury_rotate_angle * NonStd::DEGREE_TO_RAD;
 
@@ -105,7 +105,7 @@ void marsIdle () {
 
     }
 
-    mars.setRelativeTo ( space );
+    mars.setRelativeTo ( marsPath );
 
     const double calculate = mars_rotate_angle * NonStd::DEGREE_TO_RAD;
 

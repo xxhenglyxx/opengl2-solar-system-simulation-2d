@@ -32,35 +32,25 @@ void render () {
 
             }
 
-        glPopMatrix ();
+            glPushMatrix ();
 
-        glPushMatrix ();
+                if ( earth.isObjectShown () ) {
 
-            if ( earth.isObjectShown () ) {
+                    earth.draw ();
 
-                earth.draw ();
+                }
 
-            }
+                glPushMatrix ();
 
-        glPopMatrix ();
+                    if ( moon.isObjectShown () ) {
 
-        glPushMatrix ();
+                        moon.draw ();
 
-            if ( moon.isObjectShown () ) {
+                    }
 
-                moon.draw ();
+                glPopMatrix ();
 
-            }
-
-        glPopMatrix ();
-
-        glPushMatrix ();
-
-            if ( venus.isObjectShown () ) {
-
-                venus.draw ();
-
-            }
+            glPopMatrix ();
 
         glPopMatrix ();
 
@@ -72,15 +62,15 @@ void render () {
 
             }
 
-        glPopMatrix ();
+            glPushMatrix ();
 
-        glPushMatrix ();
+                if ( venus.isObjectShown () ) {
 
-            if ( mercury.isObjectShown () ) {
+                    venus.draw ();
 
-                mercury.draw ();
+                }
 
-            }
+            glPopMatrix ();
 
         glPopMatrix ();
 
@@ -91,16 +81,16 @@ void render () {
                 mercuryPath.draw ();
 
             }
+            
+            glPushMatrix ();
 
-        glPopMatrix ();
+                if ( mercury.isObjectShown () ) {
 
-        glPushMatrix ();
+                    mercury.draw ();
 
-            if ( mars.isObjectShown () ) {
+                }
 
-                mars.draw ();
-
-            }
+            glPopMatrix ();
 
         glPopMatrix ();
 
@@ -111,6 +101,16 @@ void render () {
                 marsPath.draw ();
 
             }
+            
+           glPushMatrix ();
+
+                if ( mars.isObjectShown () ) {
+
+                    mars.draw ();
+
+                }
+
+            glPopMatrix (); 
 
         glPopMatrix ();
 
