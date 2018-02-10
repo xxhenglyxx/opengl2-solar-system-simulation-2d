@@ -20,6 +20,8 @@ namespace NonStd {
 
         glBegin ( GL_POINTS );
 
+            // glColor3d ( this -> color [ 0 ], this -> color [ 1 ], this -> color [ 2 ] );
+
             for ( ; angle < 360; ++ angle ) {
 
                 glVertex3d (

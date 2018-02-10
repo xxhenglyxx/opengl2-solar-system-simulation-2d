@@ -56,6 +56,9 @@ namespace NonStd {
 
             void setTexture ( const char * file_name, const int width, const int height );
             void setVisible ( const bool visibility );
+            void setColorRed ( const double value );
+            void setColorGreen ( const double value );
+            void setColorBlue ( const double value );
 
             void setRelativeTo ( Object & object );
 

@@ -115,3 +115,60 @@ void marsIdle () {
     mars_rotate_angle += NonStd::MARS_ROTATE_SPEED;
 
 };
+
+void jupiterIdle () {
+
+    if ( jupiter_rotate_angle > 360 ) {
+
+        jupiter_rotate_angle = .0;
+
+    }
+
+    jupiter.setRelativeTo ( jupiterPath );
+
+    const double calculate = jupiter_rotate_angle * NonStd::DEGREE_TO_RAD;
+
+    jupiter.translateX ( ( NonStd::JUPITER_SUN_DISTANCE + sun.getRadius () ) * cos ( calculate ) );
+    jupiter.translateZ ( ( NonStd::JUPITER_SUN_DISTANCE + sun.getRadius () ) * sin ( calculate ) );
+
+    jupiter_rotate_angle += NonStd::JUPITER_ROTATE_SPEED;
+
+};
+
+void uranusIdle () {
+
+    if ( uranus_rotate_angle > 360 ) {
+
+        uranus_rotate_angle = .0;
+
+    }
+
+    uranus.setRelativeTo ( uranusPath );
+
+    const double calculate = uranus_rotate_angle * NonStd::DEGREE_TO_RAD;
+
+    uranus.translateX ( ( NonStd::URANUS_SUN_DISTANCE ) * cos ( calculate ) );
+    uranus.translateZ ( ( NonStd::URANUS_SUN_DISTANCE ) * sin ( calculate ) );
+
+    uranus_rotate_angle += NonStd::URANUS_ROTATE_SPEED;
+
+};
+
+void neptuneIdle () {
+
+    if ( neptune_rotate_angle > 360 ) {
+
+        neptune_rotate_angle = .0;
+
+    }
+
+    neptune.setRelativeTo ( neptunePath );
+
+    const double calculate = neptune_rotate_angle * NonStd::DEGREE_TO_RAD;
+
+    neptune.translateX ( ( NonStd::NEPTUNE_SUN_DISTANCE ) * cos ( calculate ) );
+    neptune.translateZ ( ( NonStd::NEPTUNE_SUN_DISTANCE ) * sin ( calculate ) );
+
+    neptune_rotate_angle += NonStd::NEPTUNE_ROTATE_SPEED;
+
+};

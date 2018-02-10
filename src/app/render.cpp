@@ -114,6 +114,66 @@ void render () {
 
         glPopMatrix ();
 
+        glPushMatrix ();
+
+            if ( jupiterPath.isObjectShown () ) {
+
+                jupiterPath.draw ();
+
+            }
+
+            glPushMatrix ();
+
+                if ( jupiter.isObjectShown () ) {
+
+                    jupiter.draw ();
+
+                }
+
+            glPopMatrix ();
+
+        glPopMatrix ();
+
+        glPushMatrix ();
+
+            if ( uranusPath.isObjectShown () ) {
+
+                uranusPath.draw ();
+
+            }
+
+            glPushMatrix ();
+
+                if ( uranus.isObjectShown () ) {
+
+                    uranus.draw ();
+
+                }
+
+            glPopMatrix ();
+
+        glPopMatrix ();
+
+        glPushMatrix ();
+
+            if ( neptunePath.isObjectShown () ) {
+
+                neptunePath.draw ();
+
+            }
+
+            glPushMatrix ();
+
+                if ( neptune.isObjectShown () ) {
+
+                    neptune.draw ();
+
+                }
+
+            glPopMatrix ();
+
+        glPopMatrix ();
+
     glPopMatrix ();
 
     glFlush ();

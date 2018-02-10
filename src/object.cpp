@@ -13,6 +13,24 @@ namespace NonStd {
 
     };
 
+    void Object::setColorRed ( const double value ) {
+
+        this -> color [ 0 ] = value / 255.0;
+
+    };
+
+    void Object::setColorGreen ( const double value ) {
+
+        this -> color [ 1 ] = value / 255.0;
+
+    };
+
+    void Object::setColorBlue ( const double value ) {
+
+        this -> color [ 2 ] = value / 255.0;
+
+    };
+
     void Object::setCoordinateX ( const double x ) {
 
         this -> coordinate [ 0 ] = x;
@@ -49,11 +67,9 @@ namespace NonStd {
 
         if ( this -> rotation [ 0 ] < 1.0 ) {
 
-            this -> rotation [ 0 ] += .01;
+            this -> rotation [ 0 ] += .001;
 
         }
-
-        // this -> rotation [ 0 ] = 1.0;
 
     };
 
@@ -63,7 +79,7 @@ namespace NonStd {
 
         if ( this -> rotation [ 1 ] < 1.0 ) {
 
-            this -> rotation [ 1 ] += .01;
+            this -> rotation [ 1 ] += .001;
 
         }
 
@@ -77,11 +93,11 @@ namespace NonStd {
 
         if ( this -> rotation [ 2 ] < 1.0 ) {
 
-            this -> rotation [ 2 ] += .01;
+            this -> rotation [ 2 ] += .001;
 
         }
 
-        this -> rotation [ 2 ] = 1.0;
+        // this -> rotation [ 2 ] = 1.0;
 
     };
 

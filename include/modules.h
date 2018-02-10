@@ -32,6 +32,12 @@ namespace NonStd {
     constexpr double MERCURY_ROTATE_SPEED = .03;
     constexpr double MARS_SUN_DISTANCE = 35.279;
     constexpr double MARS_ROTATE_SPEED = .23;
+    constexpr double JUPITER_SUN_DISTANCE = 77.8;
+    constexpr double JUPITER_ROTATE_SPEED = .43;
+    constexpr double URANUS_SUN_DISTANCE = 128.8;
+    constexpr double URANUS_ROTATE_SPEED = .24;
+    constexpr double NEPTUNE_SUN_DISTANCE = 169.4;
+    constexpr double NEPTUNE_ROTATE_SPEED = .05;
 
     class Camera {
 

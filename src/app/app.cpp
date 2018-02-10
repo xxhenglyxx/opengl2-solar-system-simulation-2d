@@ -7,18 +7,27 @@ NonStd::Sphere moon = NonStd::Sphere ( 1.7 );
 NonStd::Sphere venus = NonStd::Sphere ( 5.8 );
 NonStd::Sphere mercury = NonStd::Sphere ( 2.5 );
 NonStd::Sphere mars = NonStd::Sphere ( 3.39 );
+NonStd::Sphere jupiter = NonStd::Sphere ( 6.29 );
+NonStd::Sphere uranus = NonStd::Sphere ( 2.53 );
+NonStd::Sphere neptune = NonStd::Sphere ( 2.4 );
 
-NonStd::Space space = NonStd::Space ( 200 );
+NonStd::Space space = NonStd::Space ( 380 );
 NonStd::Camera camera = NonStd::Camera ();
 NonStd::OrbitPath earthPath = NonStd::OrbitPath ( sun.getRadius () + NonStd::EARTH_SUN_DISTANCE );
 NonStd::OrbitPath marsPath = NonStd::OrbitPath ( sun.getRadius () + NonStd::MARS_SUN_DISTANCE + 16 );
 NonStd::OrbitPath mercuryPath = NonStd::OrbitPath ( sun.getRadius () + NonStd::MERCURY_SUN_DISTANCE - 5 );
 NonStd::OrbitPath venusPath = NonStd::OrbitPath ( sun.getRadius () + NonStd::VENUS_SUN_DISTANCE - 5 );
+NonStd::OrbitPath jupiterPath = NonStd::OrbitPath ( NonStd::JUPITER_SUN_DISTANCE + sun.getRadius () );
+NonStd::OrbitPath uranusPath = NonStd::OrbitPath ( NonStd::URANUS_SUN_DISTANCE );
+NonStd::OrbitPath neptunePath = NonStd::OrbitPath ( NonStd::NEPTUNE_SUN_DISTANCE );
 
 double earth_rotate_angle = .0;
 double moon_rotate_angle = .0;
 double venus_rotate_angle = .0;
 double mercury_rotate_angle = .0;
+double jupiter_rotate_angle = .0;
+double uranus_rotate_angle = .0;
+double neptune_rotate_angle = .0;
 double mars_rotate_angle = .0;
 double mouse_position [ 3 ] = { .0, .0, .0 };
 double app_rotation_speed = .0;
@@ -28,7 +37,7 @@ void windowOnChange ( int width, int height ) {
 
     glViewport ( 0, 0, width, height );
 
-    NonStd::setPerspectiveView ( 60, static_cast < GLfloat > ( width ) / static_cast < GLfloat > ( height ), .01, 600.0 );
+    NonStd::setPerspectiveView ( 60, static_cast < GLfloat > ( width ) / static_cast < GLfloat > ( height ), .01, 1200.0 );
 
 };
 
@@ -76,7 +85,7 @@ void mouseOnDrag ( int x, int y ) {
 
     if ( x != mouse_position [ 0 ] || y != mouse_position [ 1 ] ) {
 
-        app_rotation_speed = 10.0;
+        app_rotation_speed = 8.0;
 
     }
 
@@ -114,13 +123,16 @@ void idle () {
 
     }
 
-    pathIdle ();
+    // pathIdle ();
     sunIdle ();
     earthIdle ();
     moonIdle ();
     venusIdle ();
     mercuryIdle ();
     marsIdle ();
+    jupiterIdle ();
+    uranusIdle ();
+    neptuneIdle ();
 
     glutPostRedisplay ();
 
@@ -131,8 +143,11 @@ void modelInit () {
     // object visibility default is false
     sun.setVisible ( true );
     // set object texture
-    // sun.setTexture ( "resources/earth.png", 256, 256 );
+    sun.setTexture ( "resources/earth.png", 256, 256 );
     // spin default is false, toggle it for spinning
+    sun.setColorRed ( 253.0 );
+    sun.setColorGreen ( 184.0 );
+    sun.setColorBlue ( 19.0 );
     sun.toggleSpin (); 
 
     space.setVisible ( true );
@@ -158,11 +173,20 @@ void modelInit () {
     mars.setVisible ( true );
     marsPath.setVisible ( true );
 
+    jupiter.setVisible ( true );
+    jupiterPath.setVisible ( true );
+
+    uranus.setVisible ( true );
+    uranusPath.setVisible ( true );
+
+    neptune.setVisible ( true );
+    neptunePath.setVisible ( true );
+
 };
 
 void keyboardOnPress ( unsigned char key, int x, int y ) {
 
-    app_rotation_speed = 10.0;
+    app_rotation_speed = 8.0;
 
     switch ( key ) {
 

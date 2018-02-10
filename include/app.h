@@ -17,6 +17,9 @@ extern NonStd::Sphere moon;
 extern NonStd::Sphere venus;
 extern NonStd::Sphere mercury;
 extern NonStd::Sphere mars;
+extern NonStd::Sphere jupiter;
+extern NonStd::Sphere uranus;
+extern NonStd::Sphere neptune;
 
 extern NonStd::Space space;
 extern NonStd::Camera camera;
@@ -24,12 +27,18 @@ extern NonStd::OrbitPath earthPath;
 extern NonStd::OrbitPath marsPath;
 extern NonStd::OrbitPath mercuryPath;
 extern NonStd::OrbitPath venusPath;
+extern NonStd::OrbitPath jupiterPath;
+extern NonStd::OrbitPath uranusPath;
+extern NonStd::OrbitPath neptunePath;
 
 extern double earth_rotate_angle;
 extern double moon_rotate_angle;
 extern double venus_rotate_angle;
 extern double mercury_rotate_angle;
 extern double mars_rotate_angle;
+extern double jupiter_rotate_angle;
+extern double uranus_rotate_angle;
+extern double neptune_rotate_angle;
 
 extern double mouse_position [ 3 ];
 extern double app_rotation_speed;
@@ -47,6 +56,9 @@ extern void earthIdle ();
 extern void venusIdle ();
 extern void mercuryIdle ();
 extern void marsIdle ();
+extern void jupiterIdle ();
+extern void uranusIdle ();
+extern void neptuneIdle ();
 
 extern void windowOnChange ( int width, int height );
 extern void mouseOnDrag ( int x, int y );

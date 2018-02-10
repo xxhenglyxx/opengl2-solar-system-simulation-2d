@@ -20,7 +20,7 @@ int main ( int args_len, char ** args_context ) {
     // top view
     // camera.lookAt ( 0.0, 189.0, .0, .0, -200.0, -1.0, .0, 1.0, .0 );
     // front view
-    camera.lookAt ( 0.0, .0, 189.0, .0, .0, -1.0, .0, 1.0, .0 );
+    camera.lookAt ( 0.0, .0, 380.0, .0, .0, -1.0, .0, 1.0, .0 );
     camera.look ();
 
     // all models initialization

@@ -45,6 +45,8 @@ namespace NonStd {
 
         glBegin ( GL_POINTS );
 
+            // glColor3d ( this -> color [ 0 ], this -> color [ 1 ], this -> color [ 2 ] );
+
             for ( ; angle < 360; ++ angle ) {
 
                 value = angle * degree_to_rad;
@@ -53,8 +55,7 @@ namespace NonStd {
 
                     value2 = angle2 * degree_to_rad;
 
-                    glTexCoord2d ( .0, .0 );
-                    glTexCoord2d ( 1.0, 1.0 );
+                    // glTexCoord2d ( angle / 2 * 3.14, 1 - ( angle / 3.14 ) );
 
                     glVertex3d (
 
@@ -63,6 +64,8 @@ namespace NonStd {
                         this -> calculateZ ( value )
 
                     );
+
+                    // glTexCoord2d ( angle2 / 2 * 3.14, 1 - ( angle / 3.14 ) );
 
                 }
 
